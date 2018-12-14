@@ -11,8 +11,7 @@ Font we use is
 We are fans of [BEM](http://getbem.com/), [Vue](https://vuejs.org/v2/style-guide/),
 [Icomoon](https://icomoon.io/app/#/select), [normalize.css](https://github.com/necolas/normalize.css/).
 
-Create GitHub account if you don't have one and send your account to [Zombi](mailto:tomas.zamba@odyzeo.com).
-soo he will give you access.
+Create GitHub account if you don't have one and send your account to [Zombi](mailto:tomas.zamba@odyzeo.com), he will give you access.
 
 Push your assignment as branch `feature/{firstname.lastname}` to this repo and create pull request.
 
