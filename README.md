@@ -11,7 +11,12 @@ Font we use is
 We are fans of [BEM](http://getbem.com/), [Vue](https://vuejs.org/v2/style-guide/),
 [Icomoon](https://icomoon.io/app/#/select), [normalize.css](https://github.com/necolas/normalize.css/).
 
-If you need help or have any questions ask [Zombi](tomas.zamba@odyzeo.com).
+Create GitHub account if you don't have one and send your account to [Zombi](mailto:tomas.zamba@odyzeo.com).
+soo he will give you access.
+
+Push your assignment as branch `feature/{firstname.lastname}` to this repo and create pull request.
+
+If you need help or have any questions ask [Zombi](mailto:tomas.zamba@odyzeo.com).
 
 Keep it simple and GLHF.
 
