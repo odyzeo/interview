@@ -3,14 +3,12 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-  state: {
+export const store = Vue.observable({
+  isNavOpen: false
+});
 
-  },
-  mutations: {
-
-  },
-  actions: {
-
+export const mutations = {
+  toggleNav() {
+    store.isNavOpen = !store.isNavOpen;
   }
-})
+};
