@@ -101,8 +101,9 @@
           </ul>
         </nav>
       </header>
+      <footer></footer>
     </div>
-    <footer></footer>
+    
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
     crossorigin="anonymous"></script>
     <script src="main.js"></script>
