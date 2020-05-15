@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <menu-desktop></menu-desktop>
-
+    <menu-box></menu-box>
   </div>
 </template>
 
@@ -10,19 +9,16 @@
   import 'bootstrap/dist/css/bootstrap.css'
   import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-  import MenuDesktop from './components/MenuDesktop.vue';
+  import MenuBox from './components/Menu.vue';
 
   export default {
     components: {
-      MenuDesktop,
+      MenuBox,
     },
   };
 </script>
 
 <style lang="less">
-  /* STYLES HERE */
-
-  /* STYLES HERE */
   body {
     height: 100vh;
     margin: 0;

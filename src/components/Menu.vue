@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!--MENU HERE-->
     <nav class="header">
       <div class="container">
         <div class="d-flex justify-content-between">
@@ -164,14 +163,9 @@
                   const box = navItem.querySelector('.main-nav-item_subitem');
 
                   navItem.classList.toggle('open');
-
                   slideToggle({ element: box })
-
                   slideUp({ element: box, slideSpeed: 1200 })
-
                   slideDown({ element: box, slideSpeed: 800, easing: 'easeInOut' })
-
-                  // Promises (or async/await)
                   slideDown({ element: box, slideSpeed: 500 }).then(() => {
                       slideUp({ element: box, slideSpeed: 300 })
                   })
@@ -182,6 +176,5 @@
 </script>
 
 <style lang="less">
-  /* STYLES HERE */
   @import "../assets/less/style";
 </style>
