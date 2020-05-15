@@ -24,5 +24,5 @@
     margin: 0;
     padding: 0;
   }
-  @import "../assets/less/style";
+  @import "assets/less/style";
 </style>
