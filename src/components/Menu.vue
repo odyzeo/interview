@@ -62,7 +62,6 @@
                 <input type="text" class="form-control p-0" placeholder="Search" aria-label="Search" aria-describedby="addon-search">
               </div>
             </li>
-            <li class="main-nav-title">All departments</li>
             <li class="main-nav-item"
                 v-for="(item, index) in menuItems"
                 :key="index"
@@ -70,13 +69,20 @@
             >
             <span class="main-nav-item_title">
               {{ item.title }}
-              <span class="icon-angle-right"></span>
+              <span
+                class="icon-angle-right"
+                v-if="item.subitems"
+              ></span>
             </span>
 
-              <ul class="main-nav-item_subitem">
+              <ul
+                class="main-nav-item_subitem"
+                v-if="item.subitems"
+              >
                 <li v-for="(subitem, index) in item.subitems"
-                    :key="index">
-                  {{ subitem }}
+                    :key="index"
+                >
+                  <a href="#">{{ subitem }}</a>
                 </li>
               </ul>
             </li>
@@ -104,22 +110,24 @@
               },
               isMobile: false,
               menuItems: [{
-                  'title': 'bags',
+                  'title': 'All departments'
+              }, {
+                  'title': 'Bags',
                   'subitems': ['Small bag', 'Mid bag', 'Large bag']
               }, {
-                  'title': 'clothes',
+                  'title': 'Clothes',
                   'subitems': ['T-shirt', 'Pants', 'Socks']
               }, {
-                  'title': 'textiles',
+                  'title': 'Textiles',
                   'subitems': ['Wool', 'Cotton']
               }, {
-                  'title': 'armors',
+                  'title': 'Armors',
                   'subitems': ['Heavy', 'Medium', 'Light']
               }, {
-                  'title': 'pets',
+                  'title': 'Pets',
                   'subitems': ['Dog', 'Dragon', 'Doby']
               }, {
-                  'title': 'weapons',
+                  'title': 'Weapons',
                   'subitems': ['Swords', 'Shields', 'Bows']
               }],
           };
@@ -133,9 +141,11 @@
       },
       mounted () {
           document.addEventListener('click', function (element) {
-              let elementClass = element.target.classList,
-                  header = document.querySelector('.main-nav-wrapper'),
-                  elementParent = element.target.closest('.main-nav');
+              let elementClass = element.target.classList;
+
+              let header = document.querySelector('.main-nav-wrapper');
+
+              let elementParent = element.target.closest('.main-nav');
 
               if (elementClass.contains('icon-menu')) {
                   header.classList.toggle('main-nav-wrapper-open');
@@ -157,18 +167,35 @@
           toggleSubnav (e) {
               const element = e.target.parentNode;
               let navItem = element.closest('.main-nav-item');
+              let navItems = this.$el.querySelectorAll('.main-nav-item');
+              const { slideDown, slideUp, slideToggle } = domSlider;
+              const box = navItem.querySelector('.main-nav-item_subitem');
+
+              slideToggle({ element: box })
+              slideDown({ element: box, slideSpeed: 500 }).then(() => {
+                  slideUp({ element: box, slideSpeed: 300 })
+              })
+
+              function removeall () {
+                  navItems.forEach((elem) => {
+                      if (elem.classList.contains('open')) {
+                          elem.classList.remove('open')
+                          let elemBox = elem.querySelector('.main-nav-item_subitem');
+                          slideToggle({ element: elemBox })
+                          slideUp({ element: elemBox, slideSpeed: 1200 })
+                      }
+                  })
+              }
 
               if (navItem) {
-                  const { slideDown, slideUp, slideToggle } = domSlider;
-                  const box = navItem.querySelector('.main-nav-item_subitem');
-
-                  navItem.classList.toggle('open');
-                  slideToggle({ element: box })
-                  slideUp({ element: box, slideSpeed: 1200 })
-                  slideDown({ element: box, slideSpeed: 800, easing: 'easeInOut' })
-                  slideDown({ element: box, slideSpeed: 500 }).then(() => {
-                      slideUp({ element: box, slideSpeed: 300 })
-                  })
+                  if (navItem.classList.contains('open')) {
+                      navItem.classList.remove('open')
+                      slideUp({ element: box, slideSpeed: 1200 })
+                  } else {
+                      removeall();
+                      navItem.classList.add('open')
+                      slideDown({ element: box, slideSpeed: 800, easing: 'easeInOut' })
+                  }
               }
           }
       }
