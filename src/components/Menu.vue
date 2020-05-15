@@ -174,7 +174,3 @@
       }
   };
 </script>
-
-<style lang="less">
-  @import "../assets/less/style";
-</style>
