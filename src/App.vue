@@ -1,11 +1,15 @@
 <template>
   <div id="app">
-    <img alt="ZlavaDnes" src="./assets/logo.png">
     <menu-desktop></menu-desktop>
+
   </div>
 </template>
 
 <script>
+  import 'normalize.css';
+  import 'bootstrap/dist/css/bootstrap.css'
+  import 'bootstrap-vue/dist/bootstrap-vue.css'
+
   import MenuDesktop from './components/MenuDesktop.vue';
 
   export default {
@@ -20,9 +24,6 @@
 
   /* STYLES HERE */
   body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 100vh;
     margin: 0;
     padding: 0;

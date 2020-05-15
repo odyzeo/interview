@@ -1,0 +1,51 @@
+body.nimbus-is-editor {
+  font-family: Lato;
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .small-text {
+    font-size: @small-font-size;
+    color: @gray;
+  }
+
+  hr {
+    margin: 0;
+  }
+
+  .btn-red {
+    font-size: @small-font-size;
+    padding: 15px 5px;
+    width: 100%;
+    background: @red;
+    border-radius: 5px;
+    color: @white;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    margin-top: 25px;
+    border: 1px solid @red;
+    transition: background @transition-time @transition-type, color @transition-time @transition-type;
+
+    &:hover {
+      background: @white;
+      color: @red;
+    }
+  }
+
+  .text-link {
+    color: @red;
+    text-decoration: underline;
+  }
+
+  input:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .bottom-bordered {
+    border-bottom: 1px solid @light-gray;
+  }
+
+}
