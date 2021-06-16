@@ -25,7 +25,7 @@
         </div>
         <ul class="menu">
           <li class="menu__item" v-for="item in data.navbarData" :key="item.name">
-            <div class="menu__item-name" href="">{{ item.name }}</div>
+            <div class="menu__item-name">{{ item.name }}</div>
             <Arrow class="menu__item-arrow" />
           </li>
         </ul>
@@ -145,7 +145,6 @@ export default {
       widows: 35px;
     }
   }
-
 }
 
 .buttons {
@@ -153,10 +152,12 @@ export default {
   display: block;
   text-align: center;
   margin-top: auto;
+  position: fixed;
+  bottom: 0;
   &__cart {
     background-color: @text-orange ;
     color: white;
-    padding: 15px;
+    padding: 15px 82px 15px 82px;
     border-radius: 3px;
   }
   &__recover-password {
