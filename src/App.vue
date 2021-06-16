@@ -1,30 +1,34 @@
 <template>
   <div id="app">
-    <img alt="ZlavaDnes" src="./assets/logo.png">
-    <menu-desktop></menu-desktop>
+    <Menu />
   </div>
 </template>
 
 <script>
-  import MenuDesktop from './components/MenuDesktop.vue';
+import Menu from './components/Menu.vue';
 
-  export default {
-    components: {
-      MenuDesktop,
-    },
-  };
+export default {
+  name: 'app',
+  components: {
+    Menu
+  },
+};
 </script>
 
-<style lang="less">
-  /* STYLES HERE */
+<style>
 
-  /* STYLES HERE */
-  body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-  }
+#app {
+  font-family: 'Lato', sans-serif;
+}
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
 </style>

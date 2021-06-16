@@ -1,0 +1,32 @@
+@text-gray: #A3A3A3;
+@text-gray-dark: #6D696A;
+@text-gray-light: #E6DDDE;
+@gray-spacer: #E5E3E4;
+@text-orange: #EE502F;
+
+@screen-phone: 767px;
+@screen-desktop: 1250px;
+
+.media-phone(@rules) {
+	@media screen and (max-width: @screen-phone) {
+		@rules();
+	}
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.2s ease;
+}
+
+.slide-enter,
+.slide-leave-to {
+  transform: translateX(-100%);
+  transition: all 150ms ease-in 0s;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0
+}
